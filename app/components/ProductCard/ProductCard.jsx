@@ -12,13 +12,12 @@ const ProductCard = ({product}) => {
         <div className="w-full h-[320px] group rounded-md">
         {/*Image and hidden content*/}
             <div className="rounded-lg bg-blue-200 h-3/4  overflow-hidden">
-            <Link href={`/products/${product.databaseId}`} className="relative block w-full h-3/4 bg-white-900 text-bodyColor group">
+            <Link href={`/product/${product.databaseId}`} className="relative block w-full h-3/4 bg-white-900 text-bodyColor group">
                 <Image
                     src={product.image?.sourceUrl ?? defaultImage}
                     alt={product.image?.altText}
                     className="mx-auto py-4 rounded-lg group-hover:scale-110 duration-300 group-hover:opacity-50"
-
-                    fill={true}
+                    fill
                 />
 
                 <div className="relative p-5">
@@ -74,7 +73,7 @@ const ProductCard = ({product}) => {
                     />
                 </span>
 
-                <Link href={`/products/${product.databaseId}`} className="post-content my-4">
+                <Link href={`/product/${product.databaseId}`} className="post-content my-4">
 
                     <button className="text-base border-[1px] border-zinc-600 px-2 py-[1px] italic hover:border-textDesignColor duration-300">
                         Checkout
