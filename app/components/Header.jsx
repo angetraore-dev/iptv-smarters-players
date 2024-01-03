@@ -5,56 +5,41 @@ import { FiUser } from "react-icons/fi";
 import Image from "next/image";
 import Logo from "./angetraore-dev_my_logo.png";
 
-/**
- *
- * @returns {JSX.Element}
- * @constructor
- * <div className="hidden lgl:flex items-center gap-8">
- *                  Home
-*
-<Link href="/">
-    * <div className="w-12 h-6 cursor-pointer font-semibold text-gray-100 uppercase relative overflow-hidden group">
-    * <span
-    className="absolute left-0 -translate-y-0 top-0 text-gray-100 group-hover:translate-y-5 transition-transform duration-300">
- *               Home
- *             </span>
-    * <span
-    className="absolute left-0 -translate-y-5 text-textDesignColor group-hover:translate-y-0 transition-transform duration-300">
- *               Home
- *             </span>
-    *
-    * </div>
-    * </Link>
-*  Pricing
-* <div className="w-16 h-6 cursor-pointer font-semibold text-gray-100 uppercase relative group overflow-hidden">
-    * <span
-    className="absolute left-0 -translate-y-0 top-0 text-gray-100 group-hover:translate-y-5 transition-transform duration-300">
- *             Pricing
- *           </span>
-    * <span
-    className="absolute left-0 -translate-y-5 text-textDesignColor group-hover:translate-y-0 transition-transform duration-300">
- *             Pricing
- *           </span>
-    * </div>
-*  Services
-* <div className="w-16 h-6 cursor-pointer font-semibold text-gray-100 uppercase relative group overflow-hidden">
-    * <span
-    className="absolute left-0 -translate-y-0 top-0 text-gray-100 group-hover:translate-y-5 transition-transform duration-300">
- *             Services
- *           </span>
-    * <span
-    className="absolute left-0 -translate-y-5 text-textDesignColor group-hover:translate-y-0 transition-transform duration-300">
- *             Services
- *           </span>
-    * </div>
-*
-</div>
- */
 const Header = () => {
     return (
         <div className="w-full h-20 border-b-[1px] border-b-zinc-600 flex items-center mdl:justify-between">
             {/* =================== Left Start here ===================== */}
-
+            <div className="hidden lgl:flex items-center gap-8">
+                {/* Home */}
+                <Link href="/">
+                    <div className="w-12 h-6 cursor-pointer font-semibold text-gray-100 uppercase relative overflow-hidden group">
+            <span className="absolute left-0 -translate-y-0 top-0 text-gray-100 group-hover:translate-y-5 transition-transform duration-300">
+              Home
+            </span>
+                        <span className="absolute left-0 -translate-y-5 text-textDesignColor group-hover:translate-y-0 transition-transform duration-300">
+              Home
+            </span>
+                    </div>
+                </Link>
+                {/* Pricing */}
+                <div className="w-16 h-6 cursor-pointer font-semibold text-gray-100 uppercase relative group overflow-hidden">
+          <span className="absolute left-0 -translate-y-0 top-0 text-gray-100 group-hover:translate-y-5 transition-transform duration-300">
+            Pricing
+          </span>
+                    <span className="absolute left-0 -translate-y-5 text-textDesignColor group-hover:translate-y-0 transition-transform duration-300">
+            Pricing
+          </span>
+                </div>
+                {/* Services */}
+                <div className="w-16 h-6 cursor-pointer font-semibold text-gray-100 uppercase relative group overflow-hidden">
+          <span className="absolute left-0 -translate-y-0 top-0 text-gray-100 group-hover:translate-y-5 transition-transform duration-300">
+            Services
+          </span>
+                    <span className="absolute left-0 -translate-y-5 text-textDesignColor group-hover:translate-y-0 transition-transform duration-300">
+            Services
+          </span>
+                </div>
+            </div>
             {/* =================== Left End here ======================= */}
             {/* =================== Middle Start here =================== */}
             <Link href="/">

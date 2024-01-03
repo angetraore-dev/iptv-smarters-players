@@ -36,7 +36,7 @@ interface CartItem {
     id: ID!
     "CartItem ID"
     key: ID!
-    "Connection between the CartItem type and the Product type"
+    "Connection between the CartItem type and the Productold type"
     product(
         "Arguments for filtering the connection"
         where: CartItemToProductConnectionWhereArgs
@@ -461,7 +461,7 @@ interface DownloadableItemConnectionPageInfo {
 
 "A downloadable product."
 interface DownloadableProduct {
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Download expiry"
     downloadExpiry: Int
@@ -469,9 +469,9 @@ interface DownloadableProduct {
     downloadLimit: Int
     "Is downloadable?"
     downloadable: Boolean
-    "Product downloads"
+    "Productold downloads"
     downloads: [ProductDownload]
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Is product virtual?"
     virtual: Boolean
@@ -601,7 +601,7 @@ interface FeeLineConnectionPageInfo {
 
 "Connection to GlobalProductAttribute Nodes"
 interface GlobalProductAttributeConnection {
-    "A list of edges (relational context) between Product and connected GlobalProductAttribute Nodes"
+    "A list of edges (relational context) between Productold and connected GlobalProductAttribute Nodes"
     edges: [GlobalProductAttributeConnectionEdge!]!
     "A list of connected GlobalProductAttribute Nodes"
     nodes: [GlobalProductAttribute!]!
@@ -807,13 +807,13 @@ interface HierarchicalTermNode {
 
 "A product with stock information."
 interface InventoriedProduct {
-    "Product backorders status"
+    "Productold backorders status"
     backorders: BackordersEnum
     "Can product be backordered?"
     backordersAllowed: Boolean
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Low stock amount"
     lowStockAmount: Int
@@ -823,7 +823,7 @@ interface InventoriedProduct {
     soldIndividually: Boolean
     "Number of items available for sale"
     stockQuantity: Int
-    "Product stock status"
+    "Productold stock status"
     stockStatus: StockStatusEnum
 }
 
@@ -859,7 +859,7 @@ interface LineItemConnectionPageInfo {
 
 "Connection to LocalProductAttribute Nodes"
 interface LocalProductAttributeConnection {
-    "A list of edges (relational context) between Product and connected LocalProductAttribute Nodes"
+    "A list of edges (relational context) between Productold and connected LocalProductAttribute Nodes"
     edges: [LocalProductAttributeConnectionEdge!]!
     "A list of connected LocalProductAttribute Nodes"
     nodes: [LocalProductAttribute!]!
@@ -1334,9 +1334,9 @@ interface Previewable {
     previewRevisionId: ID
 }
 
-"The Product type"
+"The Productold type"
 interface Product {
-    "Connection between the Product type and the ProductAttribute type"
+    "Connection between the Productold type and the ProductAttribute type"
     attributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1349,7 +1349,7 @@ interface Product {
         "Arguments for filtering the connection"
         where: ProductToProductAttributeConnectionWhereArgs
     ): ProductToProductAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
     "Catalog visibility"
     catalogVisibility: CatalogVisibilityEnum
@@ -1357,7 +1357,7 @@ interface Product {
     commentCount: Int
     "Whether the comments are open or closed for this particular post."
     commentStatus: String
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     comments(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1389,7 +1389,7 @@ interface Product {
     dateOnSaleFrom: String
     "Date on sale to"
     dateOnSaleTo: String
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -1435,7 +1435,7 @@ interface Product {
     featuredImageDatabaseId: Int
     "Globally unique ID of the featured image assigned to the node"
     featuredImageId: ID
-    "Connection between the Product type and the MediaItem type"
+    "Connection between the Productold type and the MediaItem type"
     galleryImages(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1448,7 +1448,7 @@ interface Product {
         "Arguments for filtering the connection"
         where: ProductToMediaItemConnectionWhereArgs
     ): ProductToMediaItemConnection
-    "Connection between the Product type and the GlobalProductAttribute type"
+    "Connection between the Productold type and the GlobalProductAttribute type"
     globalAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1477,7 +1477,7 @@ interface Product {
     lastEditedBy: ContentNodeToEditLastConnectionEdge
     "The permalink of the post"
     link: String
-    "Connection between the Product type and the LocalProductAttribute type"
+    "Connection between the Productold type and the LocalProductAttribute type"
     localAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1503,11 +1503,11 @@ interface Product {
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
-    "Connection between the Product type and the Product type"
+    "Connection between the Productold type and the Productold type"
     preview(
         "Arguments for filtering the connection"
         where: ProductToPreviewConnectionWhereArgs
@@ -1516,7 +1516,7 @@ interface Product {
     previewRevisionDatabaseId: Int
     "Whether the object is a node in the preview state"
     previewRevisionId: ID
-    "Connection between the Product type and the productCategory type"
+    "Connection between the Productold type and the productCategory type"
     productCategories(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1531,7 +1531,7 @@ interface Product {
     ): ProductToProductCategoryConnection
     "The id field matches the WP_Post-&gt;ID field."
     productId: Int! @deprecated(reason: "Deprecated in favor of the databaseId field")
-    "Connection between the Product type and the productTag type"
+    "Connection between the Productold type and the productTag type"
     productTags(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1544,7 +1544,7 @@ interface Product {
         "Arguments for filtering the connection"
         where: ProductToProductTagConnectionWhereArgs
     ): ProductToProductTagConnection
-    "Connection between the Product type and the productType type"
+    "Connection between the Productold type and the productType type"
     productTypes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1561,7 +1561,7 @@ interface Product {
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     related(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1574,9 +1574,9 @@ interface Product {
         "Arguments for filtering the connection"
         where: ProductToProductUnionConnectionWhereArgs
     ): ProductToProductUnionConnection
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     reviews(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1591,7 +1591,7 @@ interface Product {
     ): ProductToCommentConnection
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Connection between the Product type and the shippingClass type"
+    "Connection between the Productold type and the shippingClass type"
     shippingClasses(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1604,12 +1604,12 @@ interface Product {
         "Arguments for filtering the connection"
         where: ProductToShippingClassConnectionWhereArgs
     ): ProductToShippingClassConnection
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
     "The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table."
     slug: String
@@ -1617,7 +1617,7 @@ interface Product {
     status: String
     "The template assigned to the node"
     template: ContentTemplate
-    "Connection between the Product type and the TermNode type"
+    "Connection between the Productold type and the TermNode type"
     terms(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1637,9 +1637,9 @@ interface Product {
     ): String
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     upsell(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1654,7 +1654,7 @@ interface Product {
     ): ProductToUpsellConnection
     "The unique resource identifier path"
     uri: String
-    "Connection between the Product type and the visibleProduct type"
+    "Connection between the Productold type and the visibleProduct type"
     visibleProducts(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -1669,7 +1669,7 @@ interface Product {
     ): ProductToVisibleProductConnection
 }
 
-"Product attribute object"
+"Productold attribute object"
 interface ProductAttribute {
     "Attribute ID"
     attributeId: Int!
@@ -1683,7 +1683,7 @@ interface ProductAttribute {
     options: [String]
     "Attribute position"
     position: Int
-    "Product attribute scope."
+    "Productold attribute scope."
     scope: ProductAttributeTypesEnum!
     "Is attribute on product variation"
     variation: Boolean
@@ -1693,7 +1693,7 @@ interface ProductAttribute {
 
 "Connection to ProductAttribute Nodes"
 interface ProductAttributeConnection {
-    "A list of edges (relational context) between Product and connected ProductAttribute Nodes"
+    "A list of edges (relational context) between Productold and connected ProductAttribute Nodes"
     edges: [ProductAttributeConnectionEdge!]!
     "A list of connected ProductAttribute Nodes"
     nodes: [ProductAttribute!]!
@@ -1751,21 +1751,21 @@ interface ProductCategoryConnectionPageInfo {
     startCursor: String
 }
 
-"Connection to Product Nodes"
+"Connection to Productold Nodes"
 interface ProductConnection {
-    "A list of edges (relational context) between ProductType and connected Product Nodes"
+    "A list of edges (relational context) between ProductType and connected Productold Nodes"
     edges: [ProductConnectionEdge!]!
-    "A list of connected Product Nodes"
+    "A list of connected Productold Nodes"
     nodes: [Product!]!
     "Information about pagination in a connection."
     pageInfo: ProductConnectionPageInfo!
 }
 
-"Edge between a Node and a connected Product"
+"Edge between a Node and a connected Productold"
 interface ProductConnectionEdge {
     "Opaque reference to the nodes position in the connection. Value can be used with pagination args."
     cursor: String
-    "The connected Product Node"
+    "The connected Productold Node"
     node: Product!
 }
 
@@ -1843,24 +1843,24 @@ interface ProductTypeConnectionPageInfo {
 
 "Union between the product and product variation types"
 interface ProductUnion {
-    "Product average count"
+    "Productold average count"
     averageRating: Float
     "Catalog visibility"
     catalogVisibility: CatalogVisibilityEnum
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Date on sale from"
     dateOnSaleFrom: String
     "Date on sale to"
     dateOnSaleTo: String
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
     "If the product is featured"
     featured: Boolean
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Main image"
     image: MediaItem
@@ -1875,7 +1875,7 @@ interface ProductUnion {
         "Retrieve meta with matching keys"
         multiple: Boolean
     ): [MetaData]
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
@@ -1883,22 +1883,22 @@ interface ProductUnion {
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
 }
 
@@ -1945,19 +1945,19 @@ interface ProductVariation {
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductVariationToVariationAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
-    "Product variation backorders"
+    "Productold variation backorders"
     backorders: BackordersEnum
     "Can product be backordered?"
     backordersAllowed: Boolean
-    "Product variation catalog visibility"
+    "Productold variation catalog visibility"
     catalogVisibility: CatalogVisibilityEnum
     "Connection between the ContentNode type and the ContentType type"
     contentType: ContentNodeToContentTypeConnectionEdge
     "The name of the Content Type the node belongs to"
     contentTypeName: String!
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Date variation created"
     date: String
@@ -1967,7 +1967,7 @@ interface ProductVariation {
     dateOnSaleFrom: String
     "Date on sale to"
     dateOnSaleTo: String
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -1980,7 +1980,7 @@ interface ProductVariation {
     downloadLimit: Int
     "Is downloadable?"
     downloadable: Boolean
-    "Product downloads"
+    "Productold downloads"
     downloads: [ProductDownload]
     "If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds"
     editingLockedBy: ContentNodeToEditLockConnectionEdge
@@ -2020,11 +2020,11 @@ interface ProductVariation {
     guid: String
     "Does product variation have any visible attributes"
     hasAttributes: Boolean
-    "Product variation height"
+    "Productold variation height"
     height: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
-    "Product variation main image"
+    "Productold variation main image"
     image: MediaItem
     "Whether the node is a Content Node"
     isContentNode: Boolean!
@@ -2036,7 +2036,7 @@ interface ProductVariation {
     isTermNode: Boolean!
     "The user that most recently edited the node"
     lastEditedBy: ContentNodeToEditLastConnectionEdge
-    "Product variation length"
+    "Productold variation length"
     length: String
     "The permalink of the post"
     link: String
@@ -2059,7 +2059,7 @@ interface ProductVariation {
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is variation on sale?"
     onSale: Boolean
@@ -2069,30 +2069,30 @@ interface ProductVariation {
     previewRevisionDatabaseId: Int
     "Whether the object is a node in the preview state"
     previewRevisionId: ID
-    "Product variation&#039;s active price"
+    "Productold variation&#039;s active price"
     price(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
     "If product variation can be bought"
     purchasable: Boolean
-    "Product variation purchase_note"
+    "Productold variation purchase_note"
     purchaseNote: String
-    "Product variation&#039;s regular price"
+    "Productold variation&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product variation&#039;s sale price"
+    "Productold variation&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Product variation shipping class"
+    "Productold variation shipping class"
     shippingClass: String
     "shipping class ID"
     shippingClassId: Int
@@ -2100,24 +2100,24 @@ interface ProductVariation {
     shippingRequired: Boolean
     "Is product shipping taxable?"
     shippingTaxable: Boolean
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product variation SKU (Stock-keeping unit)"
+    "Productold variation SKU (Stock-keeping unit)"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "If should be sold individually"
     soldIndividually: Boolean
     "Variation status"
     status: String
-    "Product variation stock quantity"
+    "Productold variation stock quantity"
     stockQuantity: Int
-    "Product stock status"
+    "Productold stock status"
     stockStatus: StockStatusEnum
-    "Product variation tax class"
+    "Productold variation tax class"
     taxClass: TaxClassEnum
     "Tax status"
     taxStatus: TaxStatusEnum
@@ -2125,15 +2125,15 @@ interface ProductVariation {
     template: ContentTemplate
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
     "The unique resource identifier path"
     uri: String
     "Is product virtual?"
     virtual: Boolean
-    "Product variation weight"
+    "Productold variation weight"
     weight: String
-    "Product variation width"
+    "Productold variation width"
     width: String
 }
 
@@ -2169,7 +2169,7 @@ interface ProductVariationConnectionPageInfo {
 
 "Products with default attributes."
 interface ProductWithAttributes {
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Connection between the ProductWithAttributes type and the VariationAttribute type"
     defaultAttributes(
@@ -2182,19 +2182,19 @@ interface ProductWithAttributes {
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductWithAttributesToVariationAttributeConnection
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
 }
 
 "A physical product."
 interface ProductWithDimensions {
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
-    "Product&#039;s height"
+    "Productold&#039;s height"
     height: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
-    "Product&#039;s length"
+    "Productold&#039;s length"
     length: String
     "shipping class ID"
     shippingClassId: Int
@@ -2202,29 +2202,29 @@ interface ProductWithDimensions {
     shippingRequired: Boolean
     "Is product shipping taxable?"
     shippingTaxable: Boolean
-    "Product&#039;s weight"
+    "Productold&#039;s weight"
     weight: String
-    "Product&#039;s width"
+    "Productold&#039;s width"
     width: String
 }
 
 "Products with pricing."
 interface ProductWithPricing {
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
-    "Product&#039;s active price"
+    "Productold&#039;s active price"
     price(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Product&#039;s regular price"
+    "Productold&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Product&#039;s sale price"
+    "Productold&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
@@ -2237,9 +2237,9 @@ interface ProductWithPricing {
 
 "A product with variations."
 interface ProductWithVariations {
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Connection between the ProductWithVariations type and the ProductVariation type"
     variations(
@@ -2818,7 +2818,7 @@ type ApplyCouponPayload {
     clientMutationId: String
 }
 
-"Product attribute terms count"
+"Productold attribute terms count"
 type AttributeCount {
     "Attribute taxonomy"
     label: String!
@@ -2983,7 +2983,7 @@ type CartItemError implements CartError {
     variationId: Int
 }
 
-"Connection between the CartItem type and the Product type"
+"Connection between the CartItem type and the Productold type"
 type CartItemToProductConnectionEdge implements Edge & OneToOneConnection & ProductConnectionEdge {
     "Opaque reference to the nodes position in the connection. Value can be used with pagination args."
     cursor: String
@@ -4572,7 +4572,7 @@ type DownloadableItem implements Node {
     id: ID!
     "Name of the downloadable item."
     name: String
-    "Product of downloadable item."
+    "Productold of downloadable item."
     product: ProductUnion
     "Download URL of the downloadable item."
     url: String
@@ -4652,7 +4652,7 @@ type EnqueuedStylesheet implements EnqueuedAsset & Node {
 
 "A external product object"
 type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithComments & NodeWithContentEditor & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & Product & ProductUnion & ProductWithAttributes & ProductWithPricing & UniformResourceIdentifiable {
-    "Connection between the Product type and the ProductAttribute type"
+    "Connection between the Productold type and the ProductAttribute type"
     attributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4665,7 +4665,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
         "Arguments for filtering the connection"
         where: ProductToProductAttributeConnectionWhereArgs
     ): ProductToProductAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
     "External product Buy button text"
     buttonText: String
@@ -4675,7 +4675,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     commentCount: Int
     "Whether the comments are open or closed for this particular post."
     commentStatus: String
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     comments(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4697,7 +4697,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     contentType: ContentNodeToContentTypeConnectionEdge
     "The name of the Content Type the node belongs to"
     contentTypeName: String!
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Post publishing date."
     date: String
@@ -4718,7 +4718,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductWithAttributesToVariationAttributeConnection
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -4766,7 +4766,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     featuredImageDatabaseId: Int
     "Globally unique ID of the featured image assigned to the node"
     featuredImageId: ID
-    "Connection between the Product type and the MediaItem type"
+    "Connection between the Productold type and the MediaItem type"
     galleryImages(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4779,7 +4779,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
         "Arguments for filtering the connection"
         where: ProductToMediaItemConnectionWhereArgs
     ): ProductToMediaItemConnection
-    "Connection between the Product type and the GlobalProductAttribute type"
+    "Connection between the Productold type and the GlobalProductAttribute type"
     globalAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4792,7 +4792,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     ): ProductToGlobalProductAttributeConnection
     "The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table."
     guid: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Main image"
     image: MediaItem
@@ -4808,7 +4808,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     lastEditedBy: ContentNodeToEditLastConnectionEdge
     "The permalink of the post"
     link: String
-    "Connection between the Product type and the LocalProductAttribute type"
+    "Connection between the Productold type and the LocalProductAttribute type"
     localAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4834,11 +4834,11 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
-    "Connection between the Product type and the Product type"
+    "Connection between the Productold type and the Productold type"
     preview(
         "Arguments for filtering the connection"
         where: ProductToPreviewConnectionWhereArgs
@@ -4847,12 +4847,12 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     previewRevisionDatabaseId: Int
     "Whether the object is a node in the preview state"
     previewRevisionId: ID
-    "Product&#039;s active price"
+    "Productold&#039;s active price"
     price(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the productCategory type"
+    "Connection between the Productold type and the productCategory type"
     productCategories(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4867,7 +4867,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     ): ProductToProductCategoryConnection
     "The id field matches the WP_Post-&gt;ID field."
     productId: Int! @deprecated(reason: "Deprecated in favor of the databaseId field")
-    "Connection between the Product type and the productTag type"
+    "Connection between the Productold type and the productTag type"
     productTags(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4880,7 +4880,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
         "Arguments for filtering the connection"
         where: ProductToProductTagConnectionWhereArgs
     ): ProductToProductTagConnection
-    "Connection between the Product type and the productType type"
+    "Connection between the Productold type and the productType type"
     productTypes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4897,12 +4897,12 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Product&#039;s regular price"
+    "Productold&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     related(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4915,9 +4915,9 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
         "Arguments for filtering the connection"
         where: ProductToProductUnionConnectionWhereArgs
     ): ProductToProductUnionConnection
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     reviews(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4932,12 +4932,12 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     ): ProductToCommentConnection
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product&#039;s sale price"
+    "Productold&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the shippingClass type"
+    "Connection between the Productold type and the shippingClass type"
     shippingClasses(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4950,14 +4950,14 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
         "Arguments for filtering the connection"
         where: ProductToShippingClassConnectionWhereArgs
     ): ProductToShippingClassConnection
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "The current status of the object"
     status: String
@@ -4967,7 +4967,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     taxStatus: TaxStatusEnum
     "The template assigned to the node"
     template: ContentTemplate
-    "Connection between the Product type and the TermNode type"
+    "Connection between the Productold type and the TermNode type"
     terms(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -4987,9 +4987,9 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     ): String
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     upsell(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5004,7 +5004,7 @@ type ExternalProduct implements ContentNode & DatabaseIdentifier & MenuItemLinka
     ): ProductToUpsellConnection
     "The unique resource identifier path"
     uri: String
-    "Connection between the Product type and the visibleProduct type"
+    "Connection between the Productold type and the visibleProduct type"
     visibleProducts(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5093,15 +5093,15 @@ type GlobalProductAttribute implements Node & ProductAttribute {
     id: ID!
     "Attribute label"
     label: String
-    "Product attribute name"
+    "Productold attribute name"
     name: String
     "Attribute options"
     options: [String]
     "Attribute position"
     position: Int
-    "Product attribute scope."
+    "Productold attribute scope."
     scope: ProductAttributeTypesEnum!
-    "Product attribute slug"
+    "Productold attribute slug"
     slug: String
     "Connection between the GlobalProductAttribute type and the TermNode type"
     terms(
@@ -5154,11 +5154,11 @@ type GlobalProductAttributeToTermNodeConnectionPageInfo implements PageInfo & Te
 
 "A group product object"
 type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable & Node & NodeWithComments & NodeWithContentEditor & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & Product & ProductUnion & ProductWithAttributes & ProductWithPricing & UniformResourceIdentifiable {
-    "Product&#039;s add to cart button text description"
+    "Productold&#039;s add to cart button text description"
     addToCartDescription: String
-    "Product&#039;s add to cart button text description"
+    "Productold&#039;s add to cart button text description"
     addToCartText: String
-    "Connection between the Product type and the ProductAttribute type"
+    "Connection between the Productold type and the ProductAttribute type"
     attributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5171,7 +5171,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "Arguments for filtering the connection"
         where: ProductToProductAttributeConnectionWhereArgs
     ): ProductToProductAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
     "Catalog visibility"
     catalogVisibility: CatalogVisibilityEnum
@@ -5179,7 +5179,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     commentCount: Int
     "Whether the comments are open or closed for this particular post."
     commentStatus: String
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     comments(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5201,7 +5201,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     contentType: ContentNodeToContentTypeConnectionEdge
     "The name of the Content Type the node belongs to"
     contentTypeName: String!
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Post publishing date."
     date: String
@@ -5222,7 +5222,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductWithAttributesToVariationAttributeConnection
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -5268,7 +5268,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     featuredImageDatabaseId: Int
     "Globally unique ID of the featured image assigned to the node"
     featuredImageId: ID
-    "Connection between the Product type and the MediaItem type"
+    "Connection between the Productold type and the MediaItem type"
     galleryImages(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5281,7 +5281,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "Arguments for filtering the connection"
         where: ProductToMediaItemConnectionWhereArgs
     ): ProductToMediaItemConnection
-    "Connection between the Product type and the GlobalProductAttribute type"
+    "Connection between the Productold type and the GlobalProductAttribute type"
     globalAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5294,7 +5294,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     ): ProductToGlobalProductAttributeConnection
     "The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table."
     guid: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Main image"
     image: MediaItem
@@ -5310,7 +5310,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     lastEditedBy: ContentNodeToEditLastConnectionEdge
     "The permalink of the post"
     link: String
-    "Connection between the Product type and the LocalProductAttribute type"
+    "Connection between the Productold type and the LocalProductAttribute type"
     localAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5336,11 +5336,11 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
-    "Connection between the Product type and the Product type"
+    "Connection between the Productold type and the Productold type"
     preview(
         "Arguments for filtering the connection"
         where: ProductToPreviewConnectionWhereArgs
@@ -5354,7 +5354,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the productCategory type"
+    "Connection between the Productold type and the productCategory type"
     productCategories(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5369,7 +5369,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     ): ProductToProductCategoryConnection
     "The id field matches the WP_Post-&gt;ID field."
     productId: Int! @deprecated(reason: "Deprecated in favor of the databaseId field")
-    "Connection between the Product type and the productTag type"
+    "Connection between the Productold type and the productTag type"
     productTags(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5382,7 +5382,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "Arguments for filtering the connection"
         where: ProductToProductTagConnectionWhereArgs
     ): ProductToProductTagConnection
-    "Connection between the Product type and the productType type"
+    "Connection between the Productold type and the productType type"
     productTypes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5412,12 +5412,12 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Product&#039;s regular price"
+    "Productold&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     related(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5430,9 +5430,9 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "Arguments for filtering the connection"
         where: ProductToProductUnionConnectionWhereArgs
     ): ProductToProductUnionConnection
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     reviews(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5447,12 +5447,12 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     ): ProductToCommentConnection
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product&#039;s sale price"
+    "Productold&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the shippingClass type"
+    "Connection between the Productold type and the shippingClass type"
     shippingClasses(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5465,14 +5465,14 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
         "Arguments for filtering the connection"
         where: ProductToShippingClassConnectionWhereArgs
     ): ProductToShippingClassConnection
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "The current status of the object"
     status: String
@@ -5482,7 +5482,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     taxStatus: TaxStatusEnum
     "The template assigned to the node"
     template: ContentTemplate
-    "Connection between the Product type and the TermNode type"
+    "Connection between the Productold type and the TermNode type"
     terms(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5502,9 +5502,9 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     ): String
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     upsell(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5519,7 +5519,7 @@ type GroupProduct implements ContentNode & DatabaseIdentifier & MenuItemLinkable
     ): ProductToUpsellConnection
     "The unique resource identifier path"
     uri: String
-    "Connection between the Product type and the visibleProduct type"
+    "Connection between the Productold type and the visibleProduct type"
     visibleProducts(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -5653,7 +5653,7 @@ type LineItem implements Node {
     ): [MetaData]
     "The Id of the order the order item belongs to."
     orderId: Int
-    "Connection between the LineItem type and the Product type"
+    "Connection between the LineItem type and the Productold type"
     product(
         "Arguments for filtering the connection"
         where: LineItemToProductConnectionWhereArgs
@@ -5682,7 +5682,7 @@ type LineItem implements Node {
     variationId: Int
 }
 
-"Connection between the LineItem type and the Product type"
+"Connection between the LineItem type and the Productold type"
 type LineItemToProductConnectionEdge implements Edge & OneToOneConnection & ProductConnectionEdge {
     "Opaque reference to the nodes position in the connection. Value can be used with pagination args."
     cursor: String
@@ -5712,7 +5712,7 @@ type LocalProductAttribute implements Node & ProductAttribute {
     options: [String]
     "Attribute position"
     position: Int
-    "Product attribute scope."
+    "Productold attribute scope."
     scope: ProductAttributeTypesEnum!
     "Is attribute on product variation"
     variation: Boolean
@@ -7641,7 +7641,7 @@ type ProductCategory implements DatabaseIdentifier & HierarchicalNode & Hierarch
     databaseId: Int!
     "The description of the object"
     description: String
-    "Product category display type"
+    "Productold category display type"
     display: ProductCategoryDisplay
     "Connection between the TermNode type and the EnqueuedScript type"
     enqueuedScripts(
@@ -7667,7 +7667,7 @@ type ProductCategory implements DatabaseIdentifier & HierarchicalNode & Hierarch
     ): TermNodeToEnqueuedStylesheetConnection
     "The unique resource identifier path"
     id: ID!
-    "Product category image"
+    "Productold category image"
     image: MediaItem
     "Whether the node is a Content Node"
     isContentNode: Boolean!
@@ -7677,7 +7677,7 @@ type ProductCategory implements DatabaseIdentifier & HierarchicalNode & Hierarch
     isTermNode: Boolean!
     "The link to the term"
     link: String
-    "Product category menu order"
+    "Productold category menu order"
     menuOrder: Int
     "The human friendly name of the object."
     name: String
@@ -7689,7 +7689,7 @@ type ProductCategory implements DatabaseIdentifier & HierarchicalNode & Hierarch
     parentId: ID
     "The id field matches the WP_Post-&gt;ID field."
     productCategoryId: Int @deprecated(reason: "Deprecated in favor of databaseId")
-    "Connection between the ProductCategory type and the Product type"
+    "Connection between the ProductCategory type and the Productold type"
     products(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -7814,7 +7814,7 @@ type ProductCategoryToProductCategoryConnectionPageInfo implements PageInfo & Pr
     startCursor: String
 }
 
-"Connection between the ProductCategory type and the Product type"
+"Connection between the ProductCategory type and the Productold type"
 type ProductCategoryToProductConnection implements Connection & ProductConnection {
     "Edges for the ProductCategoryToProductConnection connection"
     edges: [ProductCategoryToProductConnectionEdge!]!
@@ -7856,7 +7856,7 @@ type ProductCategoryToTaxonomyConnectionEdge implements Edge & OneToOneConnectio
 type ProductDownload {
     "Is file allowed"
     allowedFileType: Boolean
-    "Product download ID"
+    "Productold download ID"
     downloadId: String!
     "Download file"
     file: String
@@ -7868,7 +7868,7 @@ type ProductDownload {
     filePathType: String
     "File type"
     fileType: String
-    "Product download name"
+    "Productold download name"
     name: String
 }
 
@@ -7929,7 +7929,7 @@ type ProductTag implements DatabaseIdentifier & MenuItemLinkable & Node & TermNo
     name: String
     "The id field matches the WP_Post-&gt;ID field."
     productTagId: Int @deprecated(reason: "Deprecated in favor of databaseId")
-    "Connection between the ProductTag type and the Product type"
+    "Connection between the ProductTag type and the Productold type"
     products(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -7986,7 +7986,7 @@ type ProductTagToContentNodeConnectionPageInfo implements ContentNodeConnectionP
     startCursor: String
 }
 
-"Connection between the ProductTag type and the Product type"
+"Connection between the ProductTag type and the Productold type"
 type ProductTagToProductConnection implements Connection & ProductConnection {
     "Edges for the ProductTagToProductConnection connection"
     edges: [ProductTagToProductConnectionEdge!]!
@@ -8024,7 +8024,7 @@ type ProductTagToTaxonomyConnectionEdge implements Edge & OneToOneConnection & T
     node: Taxonomy!
 }
 
-"Connection between the Product type and the Comment type"
+"Connection between the Productold type and the Comment type"
 type ProductToCommentConnection implements CommentConnection & Connection {
     "Average review rating for this product."
     averageRating: Float
@@ -8058,7 +8058,7 @@ type ProductToCommentConnectionPageInfo implements CommentConnectionPageInfo & P
     startCursor: String
 }
 
-"Connection between the Product type and the Comment type"
+"Connection between the Productold type and the Comment type"
 type ProductToCommentsConnection implements CommentConnection & Connection {
     "Edges for the ProductToCommentsConnection connection"
     edges: [ProductToCommentsConnectionEdge!]!
@@ -8088,7 +8088,7 @@ type ProductToCommentsConnectionPageInfo implements CommentConnectionPageInfo & 
     startCursor: String
 }
 
-"Connection between the Product type and the GlobalProductAttribute type"
+"Connection between the Productold type and the GlobalProductAttribute type"
 type ProductToGlobalProductAttributeConnection implements Connection & GlobalProductAttributeConnection {
     "Edges for the ProductToGlobalProductAttributeConnection connection"
     edges: [ProductToGlobalProductAttributeConnectionEdge!]!
@@ -8118,7 +8118,7 @@ type ProductToGlobalProductAttributeConnectionPageInfo implements GlobalProductA
     startCursor: String
 }
 
-"Connection between the Product type and the LocalProductAttribute type"
+"Connection between the Productold type and the LocalProductAttribute type"
 type ProductToLocalProductAttributeConnection implements Connection & LocalProductAttributeConnection {
     "Edges for the ProductToLocalProductAttributeConnection connection"
     edges: [ProductToLocalProductAttributeConnectionEdge!]!
@@ -8148,7 +8148,7 @@ type ProductToLocalProductAttributeConnectionPageInfo implements LocalProductAtt
     startCursor: String
 }
 
-"Connection between the Product type and the MediaItem type"
+"Connection between the Productold type and the MediaItem type"
 type ProductToMediaItemConnection implements Connection & MediaItemConnection {
     "Edges for the ProductToMediaItemConnection connection"
     edges: [ProductToMediaItemConnectionEdge!]!
@@ -8178,7 +8178,7 @@ type ProductToMediaItemConnectionPageInfo implements MediaItemConnectionPageInfo
     startCursor: String
 }
 
-"Connection between the Product type and the Product type"
+"Connection between the Productold type and the Productold type"
 type ProductToPreviewConnectionEdge implements Edge & OneToOneConnection & ProductConnectionEdge {
     "Opaque reference to the nodes position in the connection. Value can be used with pagination args."
     cursor: String
@@ -8186,7 +8186,7 @@ type ProductToPreviewConnectionEdge implements Edge & OneToOneConnection & Produ
     node: Product!
 }
 
-"Connection between the Product type and the ProductAttribute type"
+"Connection between the Productold type and the ProductAttribute type"
 type ProductToProductAttributeConnection implements Connection & ProductAttributeConnection {
     "Edges for the ProductToProductAttributeConnection connection"
     edges: [ProductToProductAttributeConnectionEdge!]!
@@ -8216,7 +8216,7 @@ type ProductToProductAttributeConnectionPageInfo implements PageInfo & ProductAt
     startCursor: String
 }
 
-"Connection between the Product type and the productCategory type"
+"Connection between the Productold type and the productCategory type"
 type ProductToProductCategoryConnection implements Connection & ProductCategoryConnection {
     "Edges for the ProductToProductCategoryConnection connection"
     edges: [ProductToProductCategoryConnectionEdge!]!
@@ -8246,7 +8246,7 @@ type ProductToProductCategoryConnectionPageInfo implements PageInfo & ProductCat
     startCursor: String
 }
 
-"Connection between the Product type and the productTag type"
+"Connection between the Productold type and the productTag type"
 type ProductToProductTagConnection implements Connection & ProductTagConnection {
     "Edges for the ProductToProductTagConnection connection"
     edges: [ProductToProductTagConnectionEdge!]!
@@ -8276,7 +8276,7 @@ type ProductToProductTagConnectionPageInfo implements PageInfo & ProductTagConne
     startCursor: String
 }
 
-"Connection between the Product type and the productType type"
+"Connection between the Productold type and the productType type"
 type ProductToProductTypeConnection implements Connection & ProductTypeConnection {
     "Edges for the ProductToProductTypeConnection connection"
     edges: [ProductToProductTypeConnectionEdge!]!
@@ -8306,7 +8306,7 @@ type ProductToProductTypeConnectionPageInfo implements PageInfo & ProductTypeCon
     startCursor: String
 }
 
-"Connection between the Product type and the ProductUnion type"
+"Connection between the Productold type and the ProductUnion type"
 type ProductToProductUnionConnection implements Connection & ProductUnionConnection {
     "Edges for the ProductToProductUnionConnection connection"
     edges: [ProductToProductUnionConnectionEdge!]!
@@ -8338,7 +8338,7 @@ type ProductToProductUnionConnectionPageInfo implements PageInfo & ProductUnionC
     startCursor: String
 }
 
-"Connection between the Product type and the shippingClass type"
+"Connection between the Productold type and the shippingClass type"
 type ProductToShippingClassConnection implements Connection & ShippingClassConnection {
     "Edges for the ProductToShippingClassConnection connection"
     edges: [ProductToShippingClassConnectionEdge!]!
@@ -8368,7 +8368,7 @@ type ProductToShippingClassConnectionPageInfo implements PageInfo & ShippingClas
     startCursor: String
 }
 
-"Connection between the Product type and the TermNode type"
+"Connection between the Productold type and the TermNode type"
 type ProductToTermNodeConnection implements Connection & TermNodeConnection {
     "Edges for the ProductToTermNodeConnection connection"
     edges: [ProductToTermNodeConnectionEdge!]!
@@ -8398,7 +8398,7 @@ type ProductToTermNodeConnectionPageInfo implements PageInfo & TermNodeConnectio
     startCursor: String
 }
 
-"Connection between the Product type and the ProductUnion type"
+"Connection between the Productold type and the ProductUnion type"
 type ProductToUpsellConnection implements Connection & ProductUnionConnection {
     "Edges for the ProductToUpsellConnection connection"
     edges: [ProductToUpsellConnectionEdge!]!
@@ -8430,7 +8430,7 @@ type ProductToUpsellConnectionPageInfo implements PageInfo & ProductUnionConnect
     startCursor: String
 }
 
-"Connection between the Product type and the visibleProduct type"
+"Connection between the Productold type and the visibleProduct type"
 type ProductToVisibleProductConnection implements Connection & VisibleProductConnection {
     "Edges for the ProductToVisibleProductConnection connection"
     edges: [ProductToVisibleProductConnectionEdge!]!
@@ -8517,7 +8517,7 @@ type ProductType implements DatabaseIdentifier & Node & TermNode & UniformResour
     name: String
     "The id field matches the WP_Post-&gt;ID field."
     productTypeId: Int @deprecated(reason: "Deprecated in favor of databaseId")
-    "Connection between the ProductType type and the Product type"
+    "Connection between the ProductType type and the Productold type"
     products(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -8574,7 +8574,7 @@ type ProductTypeToContentNodeConnectionPageInfo implements ContentNodeConnection
     startCursor: String
 }
 
-"Connection between the ProductType type and the Product type"
+"Connection between the ProductType type and the Productold type"
 type ProductTypeToProductConnection implements Connection & ProductConnection {
     "Edges for the ProductTypeToProductConnection connection"
     edges: [ProductTypeToProductConnectionEdge!]!
@@ -11061,7 +11061,7 @@ type ShippingClass implements DatabaseIdentifier & Node & TermNode & UniformReso
     link: String
     "The human friendly name of the object."
     name: String
-    "Connection between the ShippingClass type and the Product type"
+    "Connection between the ShippingClass type and the Productold type"
     products(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11120,7 +11120,7 @@ type ShippingClassToContentNodeConnectionPageInfo implements ContentNodeConnecti
     startCursor: String
 }
 
-"Connection between the ShippingClass type and the Product type"
+"Connection between the ShippingClass type and the Productold type"
 type ShippingClassToProductConnection implements Connection & ProductConnection {
     "Edges for the ShippingClassToProductConnection connection"
     edges: [ShippingClassToProductConnectionEdge!]!
@@ -11248,7 +11248,7 @@ type SimpleCartItem implements CartItem & Node {
     id: ID!
     "CartItem ID"
     key: ID!
-    "Connection between the CartItem type and the Product type"
+    "Connection between the CartItem type and the Productold type"
     product(
         "Arguments for filtering the connection"
         where: CartItemToProductConnectionWhereArgs
@@ -11281,7 +11281,7 @@ type SimpleCartItem implements CartItem & Node {
 
 "A simple product object"
 type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadableProduct & InventoriedProduct & MenuItemLinkable & Node & NodeWithComments & NodeWithContentEditor & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & Product & ProductUnion & ProductWithAttributes & ProductWithDimensions & ProductWithPricing & UniformResourceIdentifiable {
-    "Connection between the Product type and the ProductAttribute type"
+    "Connection between the Productold type and the ProductAttribute type"
     attributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11294,9 +11294,9 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "Arguments for filtering the connection"
         where: ProductToProductAttributeConnectionWhereArgs
     ): ProductToProductAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
-    "Product backorders status"
+    "Productold backorders status"
     backorders: BackordersEnum
     "Can product be backordered?"
     backordersAllowed: Boolean
@@ -11306,7 +11306,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     commentCount: Int
     "Whether the comments are open or closed for this particular post."
     commentStatus: String
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     comments(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11341,7 +11341,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "Arguments for filtering the connection"
         where: SimpleProductToProductUnionConnectionWhereArgs
     ): SimpleProductToProductUnionConnection
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Post publishing date."
     date: String
@@ -11362,7 +11362,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductWithAttributesToVariationAttributeConnection
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -11375,7 +11375,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     downloadLimit: Int
     "Is downloadable?"
     downloadable: Boolean
-    "Product downloads"
+    "Productold downloads"
     downloads: [ProductDownload]
     "If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds"
     editingLockedBy: ContentNodeToEditLockConnectionEdge
@@ -11416,7 +11416,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     featuredImageDatabaseId: Int
     "Globally unique ID of the featured image assigned to the node"
     featuredImageId: ID
-    "Connection between the Product type and the MediaItem type"
+    "Connection between the Productold type and the MediaItem type"
     galleryImages(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11429,7 +11429,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "Arguments for filtering the connection"
         where: ProductToMediaItemConnectionWhereArgs
     ): ProductToMediaItemConnection
-    "Connection between the Product type and the GlobalProductAttribute type"
+    "Connection between the Productold type and the GlobalProductAttribute type"
     globalAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11442,9 +11442,9 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     ): ProductToGlobalProductAttributeConnection
     "The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table."
     guid: String
-    "Product&#039;s height"
+    "Productold&#039;s height"
     height: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Main image"
     image: MediaItem
@@ -11458,11 +11458,11 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     isTermNode: Boolean!
     "The user that most recently edited the node"
     lastEditedBy: ContentNodeToEditLastConnectionEdge
-    "Product&#039;s length"
+    "Productold&#039;s length"
     length: String
     "The permalink of the post"
     link: String
-    "Connection between the Product type and the LocalProductAttribute type"
+    "Connection between the Productold type and the LocalProductAttribute type"
     localAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11492,11 +11492,11 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
-    "Connection between the Product type and the Product type"
+    "Connection between the Productold type and the Productold type"
     preview(
         "Arguments for filtering the connection"
         where: ProductToPreviewConnectionWhereArgs
@@ -11505,12 +11505,12 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     previewRevisionDatabaseId: Int
     "Whether the object is a node in the preview state"
     previewRevisionId: ID
-    "Product&#039;s active price"
+    "Productold&#039;s active price"
     price(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the productCategory type"
+    "Connection between the Productold type and the productCategory type"
     productCategories(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11525,7 +11525,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     ): ProductToProductCategoryConnection
     "The id field matches the WP_Post-&gt;ID field."
     productId: Int! @deprecated(reason: "Deprecated in favor of the databaseId field")
-    "Connection between the Product type and the productTag type"
+    "Connection between the Productold type and the productTag type"
     productTags(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11538,7 +11538,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "Arguments for filtering the connection"
         where: ProductToProductTagConnectionWhereArgs
     ): ProductToProductTagConnection
-    "Connection between the Product type and the productType type"
+    "Connection between the Productold type and the productType type"
     productTypes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11555,12 +11555,12 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Product&#039;s regular price"
+    "Productold&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     related(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11573,9 +11573,9 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "Arguments for filtering the connection"
         where: ProductToProductUnionConnectionWhereArgs
     ): ProductToProductUnionConnection
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     reviews(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11590,14 +11590,14 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     ): ProductToCommentConnection
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product&#039;s sale price"
+    "Productold&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
     "shipping class ID"
     shippingClassId: Int
-    "Connection between the Product type and the shippingClass type"
+    "Connection between the Productold type and the shippingClass type"
     shippingClasses(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11614,14 +11614,14 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     shippingRequired: Boolean
     "Is product shipping taxable?"
     shippingTaxable: Boolean
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "If should be sold individually"
     soldIndividually: Boolean
@@ -11629,7 +11629,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     status: String
     "Number of items available for sale"
     stockQuantity: Int
-    "Product stock status"
+    "Productold stock status"
     stockStatus: StockStatusEnum
     "Tax class"
     taxClass: TaxClassEnum
@@ -11637,7 +11637,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     taxStatus: TaxStatusEnum
     "The template assigned to the node"
     template: ContentTemplate
-    "Connection between the Product type and the TermNode type"
+    "Connection between the Productold type and the TermNode type"
     terms(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11657,9 +11657,9 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     ): String
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     upsell(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11676,7 +11676,7 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
     uri: String
     "Is product virtual?"
     virtual: Boolean
-    "Connection between the Product type and the visibleProduct type"
+    "Connection between the Productold type and the visibleProduct type"
     visibleProducts(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -11689,9 +11689,9 @@ type SimpleProduct implements ContentNode & DatabaseIdentifier & DownloadablePro
         "Arguments for filtering the connection"
         where: ProductToVisibleProductConnectionWhereArgs
     ): ProductToVisibleProductConnection
-    "Product&#039;s weight"
+    "Productold&#039;s weight"
     weight: String
-    "Product&#039;s width"
+    "Productold&#039;s width"
     width: String
 }
 
@@ -11740,9 +11740,9 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductVariationToVariationAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
-    "Product backorders status"
+    "Productold backorders status"
     backorders: BackordersEnum
     "Can product be backordered?"
     backordersAllowed: Boolean
@@ -11752,7 +11752,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     contentType: ContentNodeToContentTypeConnectionEdge
     "The name of the Content Type the node belongs to"
     contentTypeName: String!
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Post publishing date."
     date: String
@@ -11762,7 +11762,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     dateOnSaleFrom: String
     "Date on sale to"
     dateOnSaleTo: String
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -11775,7 +11775,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     downloadLimit: Int
     "Is downloadable?"
     downloadable: Boolean
-    "Product downloads"
+    "Productold downloads"
     downloads: [ProductDownload]
     "If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds"
     editingLockedBy: ContentNodeToEditLockConnectionEdge
@@ -11815,9 +11815,9 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     guid: String
     "Does product variation have any visible attributes"
     hasAttributes: Boolean
-    "Product&#039;s height"
+    "Productold&#039;s height"
     height: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Main image"
     image: MediaItem
@@ -11831,7 +11831,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     isTermNode: Boolean!
     "The user that most recently edited the node"
     lastEditedBy: ContentNodeToEditLastConnectionEdge
-    "Product&#039;s length"
+    "Productold&#039;s length"
     length: String
     "The permalink of the post"
     link: String
@@ -11854,7 +11854,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
@@ -11864,7 +11864,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     previewRevisionDatabaseId: Int
     "Whether the object is a node in the preview state"
     previewRevisionId: ID
-    "Product&#039;s active price"
+    "Productold&#039;s active price"
     price(
         "Format of the price"
         format: PricingFieldFormatEnum
@@ -11873,21 +11873,21 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Product&#039;s regular price"
+    "Productold&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product&#039;s sale price"
+    "Productold&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Product variation shipping class"
+    "Productold variation shipping class"
     shippingClass: String
     "shipping class ID"
     shippingClassId: Int
@@ -11895,14 +11895,14 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     shippingRequired: Boolean
     "Is product shipping taxable?"
     shippingTaxable: Boolean
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "If should be sold individually"
     soldIndividually: Boolean
@@ -11910,7 +11910,7 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     status: String
     "Number of items available for sale"
     stockQuantity: Int
-    "Product stock status"
+    "Productold stock status"
     stockStatus: StockStatusEnum
     "Tax class"
     taxClass: TaxClassEnum
@@ -11920,15 +11920,15 @@ type SimpleProductVariation implements ContentNode & DownloadableProduct & Inven
     template: ContentTemplate
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
     "The unique resource identifier path"
     uri: String
     "Is product virtual?"
     virtual: Boolean
-    "Product&#039;s weight"
+    "Productold&#039;s weight"
     weight: String
-    "Product&#039;s width"
+    "Productold&#039;s width"
     width: String
 }
 
@@ -13065,7 +13065,7 @@ type UserToUserRoleConnectionPageInfo implements PageInfo & UserRoleConnectionPa
 
 "A variable product object"
 type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedProduct & MenuItemLinkable & Node & NodeWithComments & NodeWithContentEditor & NodeWithExcerpt & NodeWithFeaturedImage & NodeWithTemplate & NodeWithTitle & Previewable & Product & ProductUnion & ProductWithAttributes & ProductWithDimensions & ProductWithPricing & ProductWithVariations & UniformResourceIdentifiable {
-    "Connection between the Product type and the ProductAttribute type"
+    "Connection between the Productold type and the ProductAttribute type"
     attributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13078,9 +13078,9 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: ProductToProductAttributeConnectionWhereArgs
     ): ProductToProductAttributeConnection
-    "Product average count"
+    "Productold average count"
     averageRating: Float
-    "Product backorders status"
+    "Productold backorders status"
     backorders: BackordersEnum
     "Can product be backordered?"
     backordersAllowed: Boolean
@@ -13090,7 +13090,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     commentCount: Int
     "Whether the comments are open or closed for this particular post."
     commentStatus: String
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     comments(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13125,7 +13125,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: VariableProductToProductUnionConnectionWhereArgs
     ): VariableProductToProductUnionConnection
-    "Product or variation ID"
+    "Productold or variation ID"
     databaseId: Int!
     "Post publishing date."
     date: String
@@ -13146,7 +13146,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "The number of items to return before the referenced \"before\" cursor"
         last: Int
     ): ProductWithAttributesToVariationAttributeConnection
-    "Product description"
+    "Productold description"
     description(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
@@ -13192,7 +13192,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     featuredImageDatabaseId: Int
     "Globally unique ID of the featured image assigned to the node"
     featuredImageId: ID
-    "Connection between the Product type and the MediaItem type"
+    "Connection between the Productold type and the MediaItem type"
     galleryImages(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13205,7 +13205,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: ProductToMediaItemConnectionWhereArgs
     ): ProductToMediaItemConnection
-    "Connection between the Product type and the GlobalProductAttribute type"
+    "Connection between the Productold type and the GlobalProductAttribute type"
     globalAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13218,9 +13218,9 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     ): ProductToGlobalProductAttributeConnection
     "The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table."
     guid: String
-    "Product&#039;s height"
+    "Productold&#039;s height"
     height: String
-    "Product or variation global ID"
+    "Productold or variation global ID"
     id: ID!
     "Main image"
     image: MediaItem
@@ -13234,11 +13234,11 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     isTermNode: Boolean!
     "The user that most recently edited the node"
     lastEditedBy: ContentNodeToEditLastConnectionEdge
-    "Product&#039;s length"
+    "Productold&#039;s length"
     length: String
     "The permalink of the post"
     link: String
-    "Connection between the Product type and the LocalProductAttribute type"
+    "Connection between the Productold type and the LocalProductAttribute type"
     localAttributes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13268,11 +13268,11 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     modified: String
     "The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT."
     modifiedGmt: String
-    "Product name"
+    "Productold name"
     name: String
     "Is product on sale?"
     onSale: Boolean
-    "Connection between the Product type and the Product type"
+    "Connection between the Productold type and the Productold type"
     preview(
         "Arguments for filtering the connection"
         where: ProductToPreviewConnectionWhereArgs
@@ -13281,12 +13281,12 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     previewRevisionDatabaseId: Int
     "Whether the object is a node in the preview state"
     previewRevisionId: ID
-    "Product&#039;s active price"
+    "Productold&#039;s active price"
     price(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the productCategory type"
+    "Connection between the Productold type and the productCategory type"
     productCategories(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13301,7 +13301,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     ): ProductToProductCategoryConnection
     "The id field matches the WP_Post-&gt;ID field."
     productId: Int! @deprecated(reason: "Deprecated in favor of the databaseId field")
-    "Connection between the Product type and the productTag type"
+    "Connection between the Productold type and the productTag type"
     productTags(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13314,7 +13314,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: ProductToProductTagConnectionWhereArgs
     ): ProductToProductTagConnection
-    "Connection between the Product type and the productType type"
+    "Connection between the Productold type and the productType type"
     productTypes(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13331,12 +13331,12 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     purchasable: Boolean
     "Purchase note"
     purchaseNote: String
-    "Product&#039;s regular price"
+    "Productold&#039;s regular price"
     regularPrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     related(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13349,9 +13349,9 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: ProductToProductUnionConnectionWhereArgs
     ): ProductToProductUnionConnection
-    "Product review count"
+    "Productold review count"
     reviewCount: Int
-    "Connection between the Product type and the Comment type"
+    "Connection between the Productold type and the Comment type"
     reviews(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13366,14 +13366,14 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     ): ProductToCommentConnection
     "If reviews are allowed"
     reviewsAllowed: Boolean
-    "Product&#039;s sale price"
+    "Productold&#039;s sale price"
     salePrice(
         "Format of the price"
         format: PricingFieldFormatEnum
     ): String
     "shipping class ID"
     shippingClassId: Int
-    "Connection between the Product type and the shippingClass type"
+    "Connection between the Productold type and the shippingClass type"
     shippingClasses(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13390,14 +13390,14 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     shippingRequired: Boolean
     "Is product shipping taxable?"
     shippingTaxable: Boolean
-    "Product short description"
+    "Productold short description"
     shortDescription(
         "Format of the field output"
         format: PostObjectFieldFormatEnum
     ): String
-    "Product SKU"
+    "Productold SKU"
     sku: String
-    "Product slug"
+    "Productold slug"
     slug: String
     "If should be sold individually"
     soldIndividually: Boolean
@@ -13405,7 +13405,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     status: String
     "Number of items available for sale"
     stockQuantity: Int
-    "Product stock status"
+    "Productold stock status"
     stockStatus: StockStatusEnum
     "Tax class"
     taxClass: TaxClassEnum
@@ -13413,7 +13413,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     taxStatus: TaxStatusEnum
     "The template assigned to the node"
     template: ContentTemplate
-    "Connection between the Product type and the TermNode type"
+    "Connection between the Productold type and the TermNode type"
     terms(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13433,9 +13433,9 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
     ): String
     "Number total of sales"
     totalSales: Int
-    "Product type"
+    "Productold type"
     type: ProductTypesEnum
-    "Connection between the Product type and the ProductUnion type"
+    "Connection between the Productold type and the ProductUnion type"
     upsell(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13463,7 +13463,7 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: ProductWithVariationsToProductVariationConnectionWhereArgs
     ): ProductWithVariationsToProductVariationConnection
-    "Connection between the Product type and the visibleProduct type"
+    "Connection between the Productold type and the visibleProduct type"
     visibleProducts(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13476,9 +13476,9 @@ type VariableProduct implements ContentNode & DatabaseIdentifier & InventoriedPr
         "Arguments for filtering the connection"
         where: ProductToVisibleProductConnectionWhereArgs
     ): ProductToVisibleProductConnection
-    "Product&#039;s weight"
+    "Productold&#039;s weight"
     weight: String
-    "Product&#039;s width"
+    "Productold&#039;s width"
     width: String
 }
 
@@ -13583,7 +13583,7 @@ type VisibleProduct implements DatabaseIdentifier & Node & TermNode & UniformRes
     link: String
     "The human friendly name of the object."
     name: String
-    "Connection between the VisibleProduct type and the Product type"
+    "Connection between the VisibleProduct type and the Productold type"
     products(
         "Cursor used along with the \"first\" argument to reference where in the dataset to get data"
         after: String,
@@ -13642,7 +13642,7 @@ type VisibleProductToContentNodeConnectionPageInfo implements ContentNodeConnect
     startCursor: String
 }
 
-"Connection between the VisibleProduct type and the Product type"
+"Connection between the VisibleProduct type and the Productold type"
 type VisibleProductToProductConnection implements Connection & ProductConnection {
     "Edges for the VisibleProductToProductConnection connection"
     edges: [VisibleProductToProductConnectionEdge!]!
@@ -13719,7 +13719,7 @@ enum AvatarRatingEnum {
     X
 }
 
-"Product backorder enumeration"
+"Productold backorder enumeration"
 enum BackordersEnum {
     NO
     NOTIFY
@@ -13734,7 +13734,7 @@ enum CartErrorType {
     UNKNOWN
 }
 
-"Product catalog visibility enumeration"
+"Productold catalog visibility enumeration"
 enum CatalogVisibilityEnum {
     CATALOG
     HIDDEN
@@ -14509,7 +14509,7 @@ enum DiscountTypeEnum {
     PERCENT
 }
 
-"Product manage stock enumeration"
+"Productold manage stock enumeration"
 enum ManageStockEnum {
     FALSE
     PARENT
@@ -15016,12 +15016,12 @@ enum PricingFieldFormatEnum {
     RAW
 }
 
-"Product attribute taxonomies"
+"Productold attribute taxonomies"
 enum ProductAttributeEnum {
     NONE
 }
 
-"Product attribute type enumeration"
+"Productold attribute type enumeration"
 enum ProductAttributeTypesEnum {
     "A global product attribute"
     GLOBAL
@@ -15029,7 +15029,7 @@ enum ProductAttributeTypesEnum {
     LOCAL
 }
 
-"Product category display type enumeration"
+"Productold category display type enumeration"
 enum ProductCategoryDisplay {
     "Display both products and subcategories of this category."
     BOTH
@@ -15055,7 +15055,7 @@ enum ProductCategoryIdType {
     URI
 }
 
-"The Type of Identifier used to fetch a single Product. Default is ID."
+"The Type of Identifier used to fetch a single Productold. Default is ID."
 enum ProductIdTypeEnum {
     "Identify a resource by the Database ID."
     DATABASE_ID
@@ -15081,7 +15081,7 @@ enum ProductTagIdType {
     URI
 }
 
-"Product taxonomies"
+"Productold taxonomies"
 enum ProductTaxonomyEnum {
     PRODUCT_CAT
     PRODUCT_SHIPPING_CLASS
@@ -15104,7 +15104,7 @@ enum ProductTypeIdType {
     URI
 }
 
-"Product type enumeration"
+"Productold type enumeration"
 enum ProductTypesEnum {
     "An external product"
     EXTERNAL
@@ -15208,7 +15208,7 @@ enum ShippingMethodIdTypeEnum {
     ID
 }
 
-"Product stock status enumeration"
+"Productold stock status enumeration"
 enum StockStatusEnum {
     IN_STOCK
     ON_BACKORDER
@@ -15253,7 +15253,7 @@ enum TaxRateIdTypeEnum {
     ID
 }
 
-"Product tax status enumeration"
+"Productold tax status enumeration"
 enum TaxStatusEnum {
     NONE
     SHIPPING
@@ -15751,7 +15751,7 @@ input CheckoutInput {
 input CollectionStatsQueryInput {
     "Taxonomy relation to query"
     relation: RelationEnum!
-    "Product Taxonomy"
+    "Productold Taxonomy"
     taxonomy: ProductAttributeEnum!
 }
 
@@ -16519,13 +16519,13 @@ input CreateProductInput {
     menuOrder: Int
     "The password used to protect the content of the object"
     password: String
-    "Set connections between the Product and productCategories"
+    "Set connections between the Productold and productCategories"
     productCategories: ProductProductCategoriesInput
-    "Set connections between the Product and productTags"
+    "Set connections between the Productold and productTags"
     productTags: ProductProductTagsInput
-    "Set connections between the Product and productTypes"
+    "Set connections between the Productold and productTypes"
     productTypes: ProductProductTypesInput
-    "Set connections between the Product and shippingClasses"
+    "Set connections between the Productold and shippingClasses"
     shippingClasses: ProductShippingClassesInput
     "The slug of the object"
     slug: String
@@ -16533,7 +16533,7 @@ input CreateProductInput {
     status: PostStatusEnum
     "The title of the object"
     title: String
-    "Set connections between the Product and visibleProducts"
+    "Set connections between the Productold and visibleProducts"
     visibleProducts: ProductVisibleProductsInput
 }
 
@@ -16895,7 +16895,7 @@ input DeleteProductInput {
     clientMutationId: String
     "Whether the object should be force deleted instead of being moved to the trash"
     forceDelete: Boolean
-    "The ID of the Product to delete"
+    "The ID of the Productold to delete"
     id: ID!
     "Override the edit lock when another user is editing the post"
     ignoreEditLock: Boolean
@@ -17214,11 +17214,11 @@ input LineItemInput {
     metaData: [MetaDataInput]
     "Line name"
     name: String
-    "Product ID."
+    "Productold ID."
     productId: Int
     "Quantity ordered."
     quantity: Int
-    "Product SKU."
+    "Productold SKU."
     sku: String
     "Line subtotal (before discounts)."
     subtotal: String
@@ -18114,7 +18114,7 @@ input PostTypeOrderbyInput {
     order: OrderEnum
 }
 
-"Product filter"
+"Productold filter"
 input ProductAttributeFilterInput {
     "A list of term ids"
     ids: [Int]
@@ -18302,7 +18302,7 @@ input ProductCategoryToProductConnectionWhereArgs {
     visibility: CatalogVisibilityEnum
 }
 
-"Set relationships between the Product to productCategories"
+"Set relationships between the Productold to productCategories"
 input ProductProductCategoriesInput {
     "If true, this will append the productCategory to existing related productCategories. If false, this will replace existing relationships. Default true."
     append: Boolean
@@ -18310,11 +18310,11 @@ input ProductProductCategoriesInput {
     nodes: [ProductProductCategoriesNodeInput]
 }
 
-"List of productCategories to connect the Product to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
+"List of productCategories to connect the Productold to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
 input ProductProductCategoriesNodeInput {
     "The description of the productCategory. This field is used to set a description of the productCategory if a new one is created during the mutation."
     description: String
-    "The ID of the productCategory. If present, this will be used to connect to the Product. If no existing productCategory exists with this ID, no connection will be made."
+    "The ID of the productCategory. If present, this will be used to connect to the Productold. If no existing productCategory exists with this ID, no connection will be made."
     id: ID
     "The name of the productCategory. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field."
     name: String
@@ -18322,7 +18322,7 @@ input ProductProductCategoriesNodeInput {
     slug: String
 }
 
-"Set relationships between the Product to productTags"
+"Set relationships between the Productold to productTags"
 input ProductProductTagsInput {
     "If true, this will append the productTag to existing related productTags. If false, this will replace existing relationships. Default true."
     append: Boolean
@@ -18330,11 +18330,11 @@ input ProductProductTagsInput {
     nodes: [ProductProductTagsNodeInput]
 }
 
-"List of productTags to connect the Product to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
+"List of productTags to connect the Productold to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
 input ProductProductTagsNodeInput {
     "The description of the productTag. This field is used to set a description of the productTag if a new one is created during the mutation."
     description: String
-    "The ID of the productTag. If present, this will be used to connect to the Product. If no existing productTag exists with this ID, no connection will be made."
+    "The ID of the productTag. If present, this will be used to connect to the Productold. If no existing productTag exists with this ID, no connection will be made."
     id: ID
     "The name of the productTag. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field."
     name: String
@@ -18342,7 +18342,7 @@ input ProductProductTagsNodeInput {
     slug: String
 }
 
-"Set relationships between the Product to productTypes"
+"Set relationships between the Productold to productTypes"
 input ProductProductTypesInput {
     "If true, this will append the productType to existing related productTypes. If false, this will replace existing relationships. Default true."
     append: Boolean
@@ -18350,11 +18350,11 @@ input ProductProductTypesInput {
     nodes: [ProductProductTypesNodeInput]
 }
 
-"List of productTypes to connect the Product to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
+"List of productTypes to connect the Productold to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
 input ProductProductTypesNodeInput {
     "The description of the productType. This field is used to set a description of the productType if a new one is created during the mutation."
     description: String
-    "The ID of the productType. If present, this will be used to connect to the Product. If no existing productType exists with this ID, no connection will be made."
+    "The ID of the productType. If present, this will be used to connect to the Productold. If no existing productType exists with this ID, no connection will be made."
     id: ID
     "The name of the productType. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field."
     name: String
@@ -18362,7 +18362,7 @@ input ProductProductTypesNodeInput {
     slug: String
 }
 
-"Set relationships between the Product to shippingClasses"
+"Set relationships between the Productold to shippingClasses"
 input ProductShippingClassesInput {
     "If true, this will append the shippingClass to existing related shippingClasses. If false, this will replace existing relationships. Default true."
     append: Boolean
@@ -18370,11 +18370,11 @@ input ProductShippingClassesInput {
     nodes: [ProductShippingClassesNodeInput]
 }
 
-"List of shippingClasses to connect the Product to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
+"List of shippingClasses to connect the Productold to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
 input ProductShippingClassesNodeInput {
     "The description of the shippingClass. This field is used to set a description of the shippingClass if a new one is created during the mutation."
     description: String
-    "The ID of the shippingClass. If present, this will be used to connect to the Product. If no existing shippingClass exists with this ID, no connection will be made."
+    "The ID of the shippingClass. If present, this will be used to connect to the Productold. If no existing shippingClass exists with this ID, no connection will be made."
     id: ID
     "The name of the shippingClass. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field."
     name: String
@@ -18506,7 +18506,7 @@ input ProductTagToProductConnectionWhereArgs {
     visibility: CatalogVisibilityEnum
 }
 
-"Product filter"
+"Productold filter"
 input ProductTaxonomyFilterInput {
     "A list of term ids"
     ids: [Int]
@@ -18518,9 +18518,9 @@ input ProductTaxonomyFilterInput {
     terms: [String]
 }
 
-"Product taxonomy filter type"
+"Productold taxonomy filter type"
 input ProductTaxonomyInput {
-    "Product taxonomy rules to be filter results by"
+    "Productold taxonomy rules to be filter results by"
     filters: [ProductTaxonomyFilterInput]
     "Logic relation between each filter."
     relation: RelationEnum
@@ -19358,7 +19358,7 @@ input ProductTypeToProductConnectionWhereArgs {
     visibility: CatalogVisibilityEnum
 }
 
-"Set relationships between the Product to visibleProducts"
+"Set relationships between the Productold to visibleProducts"
 input ProductVisibleProductsInput {
     "If true, this will append the visibleProduct to existing related visibleProducts. If false, this will replace existing relationships. Default true."
     append: Boolean
@@ -19366,11 +19366,11 @@ input ProductVisibleProductsInput {
     nodes: [ProductVisibleProductsNodeInput]
 }
 
-"List of visibleProducts to connect the Product to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
+"List of visibleProducts to connect the Productold to. If an ID is set, it will be used to create the connection. If not, it will look for a slug. If neither are valid existing terms, and the site is configured to allow terms to be created during post mutations, a term will be created using the Name if it exists in the input, then fallback to the slug if it exists."
 input ProductVisibleProductsNodeInput {
     "The description of the visibleProduct. This field is used to set a description of the visibleProduct if a new one is created during the mutation."
     description: String
-    "The ID of the visibleProduct. If present, this will be used to connect to the Product. If no existing visibleProduct exists with this ID, no connection will be made."
+    "The ID of the visibleProduct. If present, this will be used to connect to the Productold. If no existing visibleProduct exists with this ID, no connection will be made."
     id: ID
     "The name of the visibleProduct. This field is used to create a new term, if term creation is enabled in nested mutations, and if one does not already exist with the provided slug or ID or if a slug or ID is not provided. If no name is included and a term is created, the creation will fallback to the slug field."
     name: String
@@ -21282,7 +21282,7 @@ input UpdateProductInput {
     date: String
     "The excerpt of the object"
     excerpt: String
-    "The ID of the Product object"
+    "The ID of the Productold object"
     id: ID!
     "Override the edit lock when another user is editing the post"
     ignoreEditLock: Boolean
@@ -21290,13 +21290,13 @@ input UpdateProductInput {
     menuOrder: Int
     "The password used to protect the content of the object"
     password: String
-    "Set connections between the Product and productCategories"
+    "Set connections between the Productold and productCategories"
     productCategories: ProductProductCategoriesInput
-    "Set connections between the Product and productTags"
+    "Set connections between the Productold and productTags"
     productTags: ProductProductTagsInput
-    "Set connections between the Product and productTypes"
+    "Set connections between the Productold and productTypes"
     productTypes: ProductProductTypesInput
-    "Set connections between the Product and shippingClasses"
+    "Set connections between the Productold and shippingClasses"
     shippingClasses: ProductShippingClassesInput
     "The slug of the object"
     slug: String
@@ -21304,7 +21304,7 @@ input UpdateProductInput {
     status: PostStatusEnum
     "The title of the object"
     title: String
-    "Set connections between the Product and visibleProducts"
+    "Set connections between the Productold and visibleProducts"
     visibleProducts: ProductVisibleProductsInput
 }
 
@@ -21362,7 +21362,7 @@ input UpdateReviewInput {
     id: ID!
     "Parent comment ID of current comment."
     parent: ID
-    "Product rating"
+    "Productold rating"
     rating: Int!
     "The approval status of the comment"
     status: CommentStatusEnum
@@ -22009,7 +22009,7 @@ input WriteReviewInput {
     date: String
     "Parent comment ID of current comment."
     parent: ID
-    "Product rating"
+    "Productold rating"
     rating: Int!
     "The approval status of the comment"
     status: CommentStatusEnum

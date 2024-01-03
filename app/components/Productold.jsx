@@ -3,7 +3,7 @@ import {Suspense} from "react";
 import Loading from "../loading";
 import Image from "next/image";
 
-const Product = (products) => {
+const Productold = (products) => {
     return(
         <>
             {products.map((post) => (
@@ -37,4 +37,4 @@ const Product = (products) => {
 
     );
 }
-export default Product;
+export default Productold;
