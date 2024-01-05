@@ -1,12 +1,13 @@
 import { Suspense } from "react";
 import Loading from "../loading";
 import { notFound } from "next/navigation";
-import { getWooProducts } from "../libs/service";
-import ProductCard from "./ProductCard/ProductCard";
+import { fetchWooCommerceProducts } from "../libs/service";
+import { ProductBox }  from "./ProductCard/ProductBox";
 
-const  Products = async () => {
 
-    const products = await getWooProducts();
+export default async function Products(){
+
+    const products = await fetchWooCommerceProducts();
     if ( ! products ){
         notFound();
     }
@@ -17,7 +18,8 @@ const  Products = async () => {
                 <h3 className="text-xl text-center">All Products on Sale ({products.length})</h3>
                 <div className="py-10 grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 gap-12">
                     {products.map((product) => {
-                        return <ProductCard key={product.node.id} product={product.node} />;
+
+                        return <ProductBox key={product.id} product={product} />;
                     })}
                 </div>
             </Suspense>
@@ -27,4 +29,3 @@ const  Products = async () => {
     );
 
 }
-export default Products;

@@ -1,23 +1,10 @@
-const API_URL = String(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT);
-const headers = { "Content-Type": "application/json" };
+//libs/base.ts
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
-export async function fetchAPI(
-    query = "",
-    { variables }: Record<string, any> = {}
-) {
-
-    const { res } = await fetch(API_URL, {
-        headers,
-        method: "POST",
-        body: JSON.stringify({
-            query,
-            variables,
-        }),
-        next: { revalidate: 10},
-
-    });
-
-    const json = await res.json();
-
-    return json.data;
-}
+//WC API /wp-json/wc/v3
+export const wooCommerceRestApi = new WooCommerceRestApi({
+    url: "https://gstreams.eu",
+    consumerKey: process.env.WOOCOMMERCE_CONSUMER_KEY!,
+    consumerSecret: process.env.WOOCOMMERCE_CONSUMER_SECRET!,
+    version: "wc/v3",
+});
