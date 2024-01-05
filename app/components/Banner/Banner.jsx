@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { starIcon } from "../../public/assets/page";
+import { starIcon } from "../../../public/assets/page";
 
 const Banner = () => {
     return (

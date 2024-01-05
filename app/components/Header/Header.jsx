@@ -3,7 +3,7 @@ import React from "react";
 import { FaTrademark, FaShoppingCart } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import Image from "next/image";
-import Logo from "./angetraore-dev_my_logo.png";
+import Logo from "../angetraore-dev_my_logo.png";
 
 const Header = () => {
     return (

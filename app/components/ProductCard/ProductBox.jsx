@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../default.jpg";
 
-
 export const ProductBox = ({product}) => {
 
     return (
@@ -77,6 +76,7 @@ export const ProductBox = ({product}) => {
                       </Link>
                   </div>
               </div>
+
           </div>
 
     );

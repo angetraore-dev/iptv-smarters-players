@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { TbArrowDownRight } from "react-icons/tb";
-import { enquiry1, enquiry2, enquiry3, starIcon } from "../../public/assets/page";
+import { enquiry1, enquiry2, enquiry3, starIcon } from "../../../public/assets/page";
 
 const Enquiry = () => {
     return (

@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../../loading";
 import { notFound } from "next/navigation";
-import { fetchWooCommerceProducts } from "../libs/service";
-import { ProductBox }  from "./ProductCard/ProductBox";
+import { fetchWooCommerceProducts } from "../../utils/service";
+import { ProductBox }  from "../ProductCard/ProductBox";
 
 
 export default async function Products(){
