@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import Loading from "../../loading";
 import { notFound } from "next/navigation";
-import { fetchWooCommerceProducts } from "../../utils/service";
+import { fetchWooCommerceProducts } from "../../utils/wooCommerceApi";
 import { ProductBox }  from "../ProductCard/ProductBox";
 
 

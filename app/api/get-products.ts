@@ -26,9 +26,9 @@ export default async function handler(req, res) {
         responseData.products = data;
         res.json( responseData );
 
-    } catch (e){
+    } catch (error){
 
-        responseData.e = e.message;
+        responseData.products = error.message;
         res.status( 500 ).json( responseData );
 
     }

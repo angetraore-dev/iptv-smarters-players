@@ -12,7 +12,7 @@ export const fetchWooCommerceProducts = async () => {
 //Fetch Single Product
 export async function singleProduct (id) {
 
-    const response = await wooCommerceRestApi.get("products", {id: id});
+    const response = await wooCommerceRestApi.get(`products/${id}`);
 
     return response.data;
 

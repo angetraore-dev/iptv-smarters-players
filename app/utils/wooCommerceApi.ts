@@ -13,22 +13,14 @@ const api = new WooCommerceRestApi({
 
 // fetch all products from WooCommerce //
 export async function fetchWooCommerceProducts() {
-    try {
-        const response = await api.get("products");
-        return response;
-    } catch (error) {
-        throw new Error(error);
-    }
+    const response = await api.get("products", {on_sale: true});
+    return response.data;
 }
 
 // create new WooCommerce order by passing in required data object //
 export async function createWooCommerceOrder(data: Order) {
-    try {
-        const response = await api.post("orders", data);
-        return response;
-    } catch (error) {
-        throw new Error(error);
-    }
+    const response = await api.post("orders", data);
+    return response;
 }
 
 export async function retrieveProductById(productId: string) {
@@ -36,6 +28,6 @@ export async function retrieveProductById(productId: string) {
         const response = await api.get(`products/${productId}`);
         return response.data;
     } catch (error) {
-        throw new Error(error);
+        console.log(error);
     }
 }

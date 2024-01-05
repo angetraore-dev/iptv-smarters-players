@@ -1,15 +1,17 @@
 //'use-client';
 import Image from "next/image";
+import Link  from "next/link";
 import { retrieveProductById } from "../../utils/wooCommerceApi";
+import { singleProduct } from "../../utils/service";
 import {notFound} from "next/navigation";
 
 export default async function ProductDetailed ({params}) {
 
-    const product = await retrieveProductById(params.id);
+    const product = await singleProduct(params.id);
 
 
-    const short_description ={__html: product.short_description.slice(0,300)+ "...", };
-    const description ={__html: product.description.slice(0,300)+ "...", };
+    const short_description ={__html: product.short_description.slice(0,100)+ "...", };
+    const description ={__html: product.description.slice(0,100)+ "...", };
     const price = {__html: product.price };
     const regular_price = {__html: product.regular_price };
     //price_html have the two prices
@@ -29,18 +31,16 @@ export default async function ProductDetailed ({params}) {
             <section className="w-screen">
 
                 <div
-                    className="m-4 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-white-600 shadow-md">
+                    className="m-4 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-black-600 shadow-md">
                     <div className="relative flex h-full flex-col text-gray-600 md:flex-row">
                         <div className="relative p-8 md:w-4/6">
                             <div className="flex flex-col md:flex-row">
                                 <h2 className="mb-2 text-2xl font-black">{product.name}</h2>
-                                <span className="ml-2 text-xs uppercase line">{regular_price}</span>
                             </div>
-                            <p className="mt-3 font-sans text-base tracking-normal">{description}.</p>
+                            <p className="mt-3 font-sans text-base tracking-normal" dangerouslySetInnerHTML={short_description ?? description} />
                             <div className="flex flex-col md:flex-row md:items-end">
-                                <p className="mt-6 text-4xl font-black" >{price_html}<sup
-                                    className="align-super text-sm">00</sup></p>
-                                <span className="ml-2 text-xs uppercase">258 Sales</span>
+                                <span>
+                                <p className="mt-6 text-4xl font-black" dangerouslySetInnerHTML={{__html: product.price_html,}} /></span>
                             </div>
                             <div className="mt-8 flex flex-col sm:flex-row">
                                 <button
@@ -52,14 +52,19 @@ export default async function ProductDetailed ({params}) {
                                     </svg>
                                     Buy now
                                 </button>
-                                <button
-                                    className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md border py-2 px-8 text-center text-gray-500 transition duration-150 ease-in-out hover:translate-y-1 hover:bg-rose-500 hover:text-white">Preview
-                                </button>
+                                <Link href={"/products"}>
+                                    <button
+                                        className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md border py-2 px-8 text-center text-gray-500 transition duration-150 ease-in-out hover:translate-y-1 hover:bg-rose-500 hover:text-white">Preview
+                                    </button>
+                                </Link>
                             </div>
                         </div>
-                        <div className="mx-auto flex items-center px-5 pt-1 md:p-8">
-                            <Image className="block h-auto max-w-full rounded-md shadow-lg"
-                                 src={product.images[0].src} alt={product.images[0].alt} fill />
+                        <div className="mx-auto flex items-center px-5 pt-1 md:p-8 bg-white">
+                           <span
+                               className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-red-500 text-center text-sm text-white">Sale</span>
+
+                            <img className="block h-auto max-w-full rounded-md shadow-lg"
+                                 src={product.images[0].src} alt={product.images[0].alt}  />
                         </div>
                     </div>
                 </div>

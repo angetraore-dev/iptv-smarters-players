@@ -1,4 +1,4 @@
-//utils/base.ts represents customApits
+//utils/base.ts represents customApi.ts
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
 //WC API /wp-json/wc/v3
