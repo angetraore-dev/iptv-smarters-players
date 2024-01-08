@@ -1,0 +1,7 @@
+### Send GET request with json body
+GET https://gstreams.eu/wp-json/wc/v3/products
+Content-Type: application/json
+consumerKey: ck_1bfe22c1066f69a5344ebde032257a2577c61be9
+consumerSecret: cs_b1eaa2d6e81a532a010a2d269a03f905d216961e
+version: wc/v3
+

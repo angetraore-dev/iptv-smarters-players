@@ -1,15 +1,20 @@
+//@/app/components/ProductCard/ProductCard ** used to display product info
+//'use-client';
 import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../default.jpg";
+import { addToCart } from "../Cart/add-to-cart";
 
-export const ProductBox = ({product}) => {
+export const ProductCard = ({product}) => {
+
+    const productType = product.type ?? '';
 
     return (
 
           <div
               className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md"
           >
-              <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href={`/product/${product.id}`}>
+              <Link className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href={`/product/${product.slug}`}>
                   <Image className="object-cover"
                          src={product.images[0].src ?? defaultImage}
                          alt={product.images[0].alt}
@@ -22,7 +27,7 @@ export const ProductBox = ({product}) => {
 
               <div className="mt-4 px-5 pb-5">
 
-                  <Link href={`/product/${product.id}`}>
+                  <Link href={`/product/${product.slug}`}>
                       <h5 className="text-xl tracking-tight text-slate-900">{product.name}</h5>
 
                       <div className="w-auto mt-2 mb-5 flex items-center justify-between">
@@ -62,17 +67,19 @@ export const ProductBox = ({product}) => {
                   </div>
                   <div className="flex items-center justify-between">
 
+
                       <span className="text-2xl font-bold text-slate-900" dangerouslySetInnerHTML={{ __html: product.price_html,}} />
 
-
-                      <Link href={`/order/${product.id}`}
-                         className="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
-                               stroke="currentColor" strokeWidth="2">
-                              <path strokeLinecap="round" strokeLinejoin="round"
-                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                          </svg>
-                          Add to cart
+                      <Link href={`/checkout/${product.slug}`} >
+                          <button
+                                  className="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                   stroke="currentColor" strokeWidth="2">
+                                  <path strokeLinecap="round" strokeLinejoin="round"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                              </svg>
+                              Checkout
+                          </button>
                       </Link>
                   </div>
               </div>
@@ -82,3 +89,15 @@ export const ProductBox = ({product}) => {
     );
 
 }
+/**
+ *                       { '<p class="text-black">{productType}</p>' ? <addToCart product={product} /> : null }
+ * <Link href={`/order/${product.id}`}
+ *                          className="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+ *                           <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24"
+ *                                stroke="currentColor" strokeWidth="2">
+ *                               <path strokeLinecap="round" strokeLinejoin="round"
+ *                                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+ *                           </svg>
+ *                           Add to cart
+ *                       </Link>
+ */
